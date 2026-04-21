@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3 class="fw-bold mb-5 mt-3 text-center">Dashboard</h3>
+
+<div class="row justify-content-center text-center">
+
+    <!-- Book Appointments -->
+    <div class="col-md-5 mb-4">
+        <div class="card shadow border-0 h-100 p-5 dashboard-card" onclick="location.href='/book'">
+            <div class="mb-3">
+                <i class="bi bi-calendar-check display-5 text-primary"></i>
+            </div>
+            <h5 class="fw-bold">
+                Book Appointments
+            </h5>
+        </div>
+    </div>
+
+    <!-- My Appointments -->
+    <div class="col-md-5 mb-4">
+        <div class="card shadow border-0 h-100 p-5 dashboard-card" onclick="location.href='#'">
+            <div class="mb-3">
+                <i class="bi bi-clipboard-data display-5 text-success"></i>
+            </div>
+            <h5 class="fw-bold">
+                My Appointments
+            </h5>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    .dashboard-card {
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 20px;
+    }
+
+    .dashboard-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+</style>
+
+{% endblock %}
