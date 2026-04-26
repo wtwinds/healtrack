@@ -18,6 +18,7 @@ db = client['healtrack']
 users = db['users']
 doctors_col = db['doctors']
 appointments = db['appointments']
+
 # ================= LOGIN =================
 @app.route('/', methods=['GET', 'POST'])
 def login():
