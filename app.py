@@ -1,18 +1,23 @@
 from flask import Flask, render_template, request, redirect, flash, session, jsonify
 from pymongo import MongoClient
-from config import MONGO_URI, SECRET_KEY
+import os
+from dotenv import load_dotenv
 import random
 
+# Load .env
+load_dotenv()
+
 app = Flask(__name__)
-app.secret_key = SECRET_KEY
+app.secret_key = os.getenv("SECRET_KEY")
 
 # ================= DATABASE =================
+MONGO_URI = os.getenv("MONGO_URI")
 client = MongoClient(MONGO_URI)
+
 db = client['healtrack']
 users = db['users']
 doctors_col = db['doctors']
 appointments = db['appointments']
-
 # ================= LOGIN =================
 @app.route('/', methods=['GET', 'POST'])
 def login():
