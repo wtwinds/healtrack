@@ -1,11 +1,7 @@
 from flask import Flask, render_template, request, redirect, flash, session, jsonify
 from pymongo import MongoClient
 import os
-from dotenv import load_dotenv
 import random
-
-# Load .env
-load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY")
